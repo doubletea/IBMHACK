@@ -12,6 +12,7 @@
     <button class="buttonz" id="addButton" onclick="addItem()">Add item</button>
     <button class="buttonz" id="Submit" onclick="clearFields()">Cooking time!</button>
   </div>
+  <h2 id="FoodNames"></h2>
   <h2>Ingredients</h2>
   <ol id="content">Empty</ol>
 
@@ -39,11 +40,13 @@
   function submitLeftovers(){
     var defaults = {
       Name: '#000',
-      : '#fff',
       ingredients: ['sun','mon','tue','wed','thu','fri','sat']
     };
     grabObj();  
+    document.getElementById("FoodNames").value = "Food Name";
   }
   </script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-latest.js"></script>
+  <script type="text/javascript" src="main.js"></script> 
 </body>
 </html>
