@@ -10,11 +10,15 @@
   <div id="g1">
     <button class="buttonz" id="clearButton" onclick="clearFields()">Clear list</button>
     <button class="buttonz" id="addButton" onclick="addItem()">Add item</button>
-    <button class="buttonz" id="Submit" onclick="clearFields()">Cooking time!</button>
+    <button class="buttonz" id="Submit" onclick="submitLeftovers()">Cooking time!</button>
   </div>
   <h2 id="FoodNames"></h2>
-  <h2>Ingredients</h2>
-  <ol id="content">Empty</ol>
+  <div id="Foodlist">
+  </div> 
+  <div id=="ingredients">
+    <h2>Ingredients</h2>
+    <ol id="content">Empty</ol>
+  </div>
 
   <!-- Javascript for buttons and textfield -->
   <script type="text/javascript">
@@ -38,12 +42,23 @@
     refreshWord();
   }
   function submitLeftovers(){
-    var defaults = {
-      Name: '#000',
-      ingredients: ['sun','mon','tue','wed','thu','fri','sat']
-    };
-    grabObj();  
     document.getElementById("FoodNames").value = "Food Name";
+    fetch(desc, printres);
+  }
+  var printres = function(results){
+    var listoffood = "";
+      
+    for(j=0;j<results.length;j++){
+      var title = results[j].title;
+      var thumb = results[j].thumbnail;
+      var ingre = results[j].ingredients;
+      listoffood = listoffood + "<div class=\"FoodItem\">"+
+                    "<h3 id=\"FoodTitle\">"+ title +"</h3>" +
+                    "<img id=\"FoodImg\" src=\"" +thumb+ "\"/>"+
+                    "<p id=\"FoodIngredients\">"+ ingre +"</p>" +
+                    +"</div>";
+    }  
+    document.getElementById("Foodlist").innerHTML = listoffood;
   }
   </script>
   <script type="text/javascript" src="https://code.jquery.com/jquery-latest.js"></script>
