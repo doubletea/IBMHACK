@@ -5,12 +5,12 @@
 </header>
 <body>
   <h1 id="leftover">Leftovers</h1>
+  <input type="text" id="inText" value="What was your leftovers?">
   <div id="g1">
-    <input type="text" id="inText" value="What was your leftovers?">
     <button onclick="myFunction()">Add item</button>
     <button onclick="clearFields()">Clear list</button>
   </div>
-  <div id="container" style="width: 50%; height:97%; float:right;"></div>
+  <div id="container" style="width: 50%; height:97%; float:right;">test</div>
   <!-- Javascript for buttons and textfield -->
   <script type="text/javascript">
   var counter = 0;
@@ -19,15 +19,16 @@
     var x = document.getElementById("inText").value;
     desc.push(x);
     counter++;
+    listGen();
   }
   function clearFields(){
     document.getElementById("inText").value = "";
   }
   function listGen(){
-    var ingredientlist="";
+    var ingredientlist="test"
     for(var i=0; i<desc.length; ++i){
       ingredientlist = ingredientlist + desc[i] + '<br>'
-      $("#container").text(ingredientlist);
+      $('#container').text(ingredientlist);
     }  
   }
   </script>
