@@ -14,7 +14,7 @@
   <!-- Javascript for buttons and textfield -->
   <script type="text/javascript">
   var counter = 0;
-  var desc;
+  var desc=["a","b"];
   function myFunction() {
     var x = document.getElementById("inText").value;
     desc.push(x);
@@ -25,10 +25,10 @@
     document.getElementById("inText").value = "";
   }
   function listGen(){
-    var ingredientlist="test"
+    var ingredientlist="test1"
     for(var i=0; i<desc.length; ++i){
       ingredientlist = ingredientlist + desc[i] + '<br>'
-      $('#container').text(ingredientlist);
+      $('#container').update(ingredientlist);
     }  
   }
   </script>
