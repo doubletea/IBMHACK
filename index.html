@@ -8,14 +8,23 @@
   <input type="text" id="inText" value="What was your leftovers?">
   <button onclick="myFunction()">Create recipe</button>
   <button onclick="clearFields()">Clear list</button>
-  <p id="output"></p>
+  <div id="container" style="width: 50%; height:97%; float:right;"></div>
   <script>
+  var counter = 0;
+  var desc;
   function myFunction() {
     var x = document.getElementById("inText").value;
-    document.getElementById("output").innerHTML = x;
+    desc[counter]  = x;
   }
   function clearFields(){
     document.getElementById("inText").value = "";
+  }
+  function listGen(){
+    var ingredientlist="";
+    for(var i=0; i<desc.length; ++i){
+      ingredientlist = ingredientlist + desc[i] + '<br>'
+      $("#container").text(ingredientlist);
+    }  
   }
   </script>
 </body>
