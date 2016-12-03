@@ -1,36 +1,32 @@
 <html>
 <header>
   <title>Title</title>
-  <link rel="stylesheet" href="stylesheet.css">
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
 </header>
 <body>
   <h1 id="leftover">Leftovers</h1>
-  <input type="text" id="inText" value="What was your leftovers?">
+  <input type="text" id="inText" value="What was your leftovers?" onfocus="if (this.value=='What was your leftovers?') this.value='';">
   <div id="g1">
-    <button onclick="myFunction()">Add item</button>
-    <button onclick="clearFields()">Clear list</button>
+    <button class="buttonz" onclick="myFunction()">Add item</button>
+    <button class="buttonz" onclick="clearFields()">Clear list</button>
   </div>
-  <div id="container" style="width: 50%; height:97%; float:right;">test</div>
+  <div id="content" style="width: 50%; height:97%; float:right;">test</div>
   <!-- Javascript for buttons and textfield -->
   <script type="text/javascript">
-  var counter = 0;
-  var desc=["a","b"];
+  var desc;
   function myFunction() {
-    var x = document.getElementById("inText").value;
-    desc.push(x);
-    counter++;
-    listGen();
+    var newWord = document.getElementById("inText").value;
+    desc.push(newWord);
+    var word="";
+    for(i=0;i < desc.length ;i++){
+      word += desc[i]+"<br>";
+    }
+    document.getElementById("content").innerHTML = word;
   }
   function clearFields(){
     document.getElementById("inText").value = "";
   }
-  function listGen(){
-    var ingredientlist="test1"
-    for(var i=0; i<desc.length; ++i){
-      ingredientlist = ingredientlist + desc[i] + '<br>'
-      $('#container').update(ingredientlist);
-    }  
-  }
+  
   </script>
 </body>
 </html>
