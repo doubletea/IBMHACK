@@ -10,9 +10,12 @@
   <div id="g1">
     <button class="buttonz" id="addButton" onclick="addItem()">Add item</button>
     <button class="buttonz" id="clearButton" onclick="clearFields()">Clear list</button>
-    <button class="buttonz" id="Submit" onclick="clearFields()">Cooking time!</button>
+    <button class="buttonz" id="Submit" onclick="submitLeftovers()">Cooking time!</button>
   </div>
   <h2 id="FoodNames"></h2>
+  <div id="Foodlist">
+    <div class="Fooditem"></div>
+  </div> 
   <h2>Ingredients</h2>
   <ol id="content">Empty</ol>
 
@@ -38,12 +41,20 @@
     refreshWord();
   }
   function submitLeftovers(){
-    var defaults = {
-      Name: '#000',
-      ingredients: ['sun','mon','tue','wed','thu','fri','sat']
-    };
-    grabObj();  
     document.getElementById("FoodNames").value = "Food Name";
+  }
+  var printres = function(results){
+    var listoffood = document.getElementById("Foodlist").value;
+      
+    for(j=0;j<results.length;j++){
+      var title = results[j].title;
+      var thumb = results[j].thumbnail;
+      var ingre = results[j].ingredients;
+      listoffood = listoffood + "<div class=\"FoodItem\">"+
+                    "<h3>"+ title +"</h3>" +
+                    "<img src=\"" +thumb+ "\"/>"
+                    +"</div>";
+    }  
   }
   </script>
   <script type="text/javascript" src="https://code.jquery.com/jquery-latest.js"></script>
