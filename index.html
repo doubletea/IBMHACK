@@ -1,6 +1,18 @@
 <html>
-<header><title>Title</title></header>
+<header>
+  <title>Title</title>
+  <link rel="stylesheet" href="stylesheet.css">
+</header>
 <body>
-<h1>Hello world</h1>
+  <h1>Leftovers</h1>
+  <input type="text" id="inText" value="What was your leftovers?">
+  <button onclick="myFunction()">Create recipe</button>
+  <p id="output"></p>
+  <script>
+  function myFunction() {
+    var x = document.getElementById("inText").value;
+    document.getElementById("output").innerHTML = x;
+  }
+  </script>
 </body>
 </html>

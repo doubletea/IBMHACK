@@ -1,0 +1,12 @@
+.h1 {
+  font-size: 40px;
+  text-align: center;
+}
+
+#inText {
+  width: 70%;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
