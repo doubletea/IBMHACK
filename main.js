@@ -25,10 +25,8 @@ var fetch = function(ingr, callback){
 		var nodeNames = [];
 		var html = JSON.parse(data);
 		
-		callback(html.results);
-		
-		debugger;
-		
+		if (callback) callback(html.results);
+
 	})
 	.fail( function(xhr, textStatus, errorThrown) {
 		alert(xhr.responseText);

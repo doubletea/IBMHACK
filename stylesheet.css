@@ -4,6 +4,10 @@ body {
  background-repeat: no-repeat;
 }
 
+p {
+  color: white;
+}
+
 h1 {
   font-family: 'Gill Sans';
   float: top;
@@ -17,6 +21,10 @@ h2 {
   font-family: 'Arial';
   margin-top:100px;
   margin-left: 15%;
+  color: white;
+}
+
+h3 {
   color: white;
 }
 
