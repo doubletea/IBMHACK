@@ -10,21 +10,27 @@
     <button class="buttonz" id="addButton" onclick="myFunction()">Add item</button>
     <button class="buttonz" id="clearButton" onclick="clearFields()">Clear list</button>
   </div>
+  <h2>Ingredients</h2>
   <ol id="content" style="width: 50%; height:97%">Empty</ol>
   <!-- Javascript for buttons and textfield -->
   <script type="text/javascript">
   var desc=[];
+  function refreshWord(){
+    var word="";
+    for(i=0;i<desc.length;i++){
+      word+= "<li>"+desc[i]+"</li>";
+    }
+    if(desc.length==0) word = "Empty";
+    document.getElementById("content").innerHTML = word;
+  }
   function myFunction() {
     var newWord = document.getElementById("inText").value;
     desc.push(newWord);
-    var word="";
-    for(i=0;i < desc.length ;i++){
-      word += "<li>"+desc[i]+"</li>";
-    }
-    document.getElementById("content").innerHTML = word;
+    refreshWord();
   }
   function clearFields(){
-    document.getElementById("inText").value = "";
+    desc=[];
+    refreshWord();
   }
   
   </script>
