@@ -2,13 +2,15 @@
 <header>
   <title>Title</title>
   <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  <script type="text/javascript" src="food-processing.js"></script>
 </header>
 <body>
   <h1 id="leftover">Leftovers</h1>
   <input type="text" id="inText" value="What was your leftovers?" onfocus="if (this.value=='What was your leftovers?') this.value='';">
   <div id="g1">
-    <button class="buttonz" onclick="myFunction()">Add item</button>
-    <button class="buttonz" onclick="clearFields()">Clear list</button>
+    <button class="buttonz" id="addButton" onclick="addItem()">Add item</button>
+    <button class="buttonz" id="clearButton" onclick="clearFields()">Clear list</button>
+    <button class="buttonz" id="Submit" onclick="clearFields()">Cooking time!</button>
   </div>
   <h2>Ingredients</h2>
   <ol id="content">Empty</ol>
@@ -24,14 +26,18 @@
     if(desc.length==0) word = "Empty";
     document.getElementById("content").innerHTML = word;
   }
-  function myFunction() {
+  function addItem() {
     var newWord = document.getElementById("inText").value;
     desc.push(newWord);
     refreshWord();
+    document.getElementById("inText").value = "";
   }
   function clearFields(){
     desc=[];
     refreshWord();
+  }
+  function submitLeftovers(){
+
   }
   </script>
 </body>
