@@ -3,5 +3,13 @@
 <body>
   <h1>Leftovers</h1>
   <input type="text" id="inText" value="What was your leftovers?">
+  <button onclick="myFunction()">Try it</button>
+  <p id="output"></p>
+  <script>
+  function myFunction() {
+    var x = document.getElementById("inText").value;
+    document.getElementById("output").innerHTML = x;
+  }
+  </script>
 </body>
 </html>
