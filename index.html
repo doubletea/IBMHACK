@@ -12,6 +12,7 @@
     <button class="buttonz" id="clearButton" onclick="clearFields()">Clear list</button>
     <button class="buttonz" id="Submit" onclick="clearFields()">Cooking time!</button>
   </div>
+  <h2 id="FoodNames"></h2>
   <h2>Ingredients</h2>
   <ol id="content">Empty</ol>
 
@@ -43,6 +44,7 @@
       ingredients: ['sun','mon','tue','wed','thu','fri','sat']
     };
     grabObj();  
+    document.getElementById("FoodNames").value = "Food Name";
   }
   </script>
 </body>
