@@ -5,21 +5,31 @@ body {
 }
 
 h1 {
-  margin-top: 30%;
+  font-family: 'Gill Sans';
+  margin-top: 100px;
   color: white;
   font-size: 60px;
   text-align: center;
 }
 
 h2 {
+  font-family: 'Arial';
+  margin-top:100px;
+  margin-left: 15%;
   color: white;
-  margin: 80px 0px 0px 0px;
 }
 
 #content {
+  font-family: 'Arial';
+  color: white;
+  margin-left: 15%;
+}
+/*
+#ingredients {
+  display: inline-block;
   color: white;
 }
-
+*/
 #inText {
   display: block;
   margin: 0px auto;
