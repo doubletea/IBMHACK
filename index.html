@@ -10,16 +10,16 @@
     <button class="buttonz" onclick="myFunction()">Add item</button>
     <button class="buttonz" onclick="clearFields()">Clear list</button>
   </div>
-  <div id="content" style="width: 50%; height:97%; float:right;">test</div>
+  <ol id="content" style="width: 50%; height:97%">Empty</ol>
   <!-- Javascript for buttons and textfield -->
   <script type="text/javascript">
-  var desc;
+  var desc=[];
   function myFunction() {
     var newWord = document.getElementById("inText").value;
     desc.push(newWord);
     var word="";
     for(i=0;i < desc.length ;i++){
-      word += desc[i]+"<br>";
+      word += "<li>"+desc[i]+"</li>";
     }
     document.getElementById("content").innerHTML = word;
   }
