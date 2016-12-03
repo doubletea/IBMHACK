@@ -6,7 +6,8 @@ body {
 
 h1 {
   font-family: 'Gill Sans';
-  margin-top: 100px;
+  float: top;
+  margin-top: 10%;
   color: white;
   font-size: 60px;
   text-align: center;
