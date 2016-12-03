@@ -5,16 +5,20 @@
 </header>
 <body>
   <h1 id="leftover">Leftovers</h1>
-  <input type="text" id="inText" value="What was your leftovers?">
-  <button onclick="myFunction()">Create recipe</button>
-  <button onclick="clearFields()">Clear list</button>
+  <div id="g1">
+    <input type="text" id="inText" value="What was your leftovers?">
+    <button onclick="myFunction()">Add item</button>
+    <button onclick="clearFields()">Clear list</button>
+  </div>
   <div id="container" style="width: 50%; height:97%; float:right;"></div>
-  <script>
+  <!-- Javascript for buttons and textfield -->
+  <script type="text/javascript">
   var counter = 0;
   var desc;
   function myFunction() {
     var x = document.getElementById("inText").value;
-    desc[counter]  = x;
+    desc.push(x);
+    counter++;
   }
   function clearFields(){
     document.getElementById("inText").value = "";
