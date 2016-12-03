@@ -14,7 +14,6 @@
   </div>
   <h2 id="FoodNames"></h2>
   <div id="Foodlist">
-    <div class="Fooditem"></div>
   </div> 
   <div id=="ingredients">
     <h2>Ingredients</h2>
@@ -47,18 +46,19 @@
     fetch(desc, printres);
   }
   var printres = function(results){
-    var listoffood = document.getElementById("Foodlist").value;
+    var listoffood = "";
       
     for(j=0;j<results.length;j++){
       var title = results[j].title;
       var thumb = results[j].thumbnail;
       var ingre = results[j].ingredients;
       listoffood = listoffood + "<div class=\"FoodItem\">"+
-                    "<h3>"+ title +"</h3>" +
-                    "<img src=\"" +thumb+ "\"/>"
+                    "<h3 id=\"FoodTitle\">"+ title +"</h3>" +
+                    "<img id=\"FoodImg\" src=\"" +thumb+ "\"/>"+
+                    "<p id=\"FoodIngredients\""+ imgre +">" +
                     +"</div>";
     }  
-    document.getElementById("Foodlist").value = listoffood;
+    document.getElementById("Foodlist").innerHTML = listoffood;
   }
   </script>
   <script type="text/javascript" src="https://code.jquery.com/jquery-latest.js"></script>
